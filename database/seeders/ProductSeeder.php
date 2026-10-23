@@ -1,0 +1,32 @@
+<?php
+
+namespace Database\Seeders;
+
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
+
+
+class ProductSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     */
+    public function run(): void
+    {
+         DB::table('products')->insert([ 
+        [ 
+            'name' => 'Laptop Gaming ROG', 
+            'slug' => Str::slug('Laptop Gaming ROG'), 
+            'description' => 'Laptop gaming high performance dengan RTX 4060', 
+            'category_id' => 1, // Elektronik 
+            'price' => 25000000, 
+            'img' => 'products/laptop.jpg', 
+            'stock' => 10, 
+            'created_at' => now(), 
+            'updated_at' => now(), 
+        ], 
+    ]); 
+    }
+}
